@@ -23,14 +23,17 @@ function handleDestroyBoxes() {
 };
 
 function createBoxes(amount) {
-  const defaultSize = 30;
-  let newSize = 0;
+  if (amount < 1 || amount > 100 || amount === '') alert('Введіть число від 1 до 100');
+  else {
+    handleDestroyBoxes();
+  let defaultSize = 30;
   let divArray = [];
   for (let i = 0; i < amount; i += 1) {
-    newSize = defaultSize + 10*i;
+    defaultSize += 10;
     let randomBox = document.createElement('div');
-    randomBox.style.cssText = `background-color: ${getRandomHexColor()}; width: ${newSize}px; height: ${newSize}px;`
+    randomBox.style.cssText = `background-color: ${getRandomHexColor()}; width: ${defaultSize}px; height: ${defaultSize}px;`
     divArray.push(randomBox);
   }
   boxesEl.append(...divArray);
+  }
 }
