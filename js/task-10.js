@@ -29,10 +29,10 @@ function createBoxes(amount) {
   let defaultSize = 30;
   let divArray = [];
   for (let i = 0; i < amount; i += 1) {
-    defaultSize += 10;
     let randomBox = document.createElement('div');
     randomBox.style.cssText = `background-color: ${getRandomHexColor()}; width: ${defaultSize}px; height: ${defaultSize}px;`
     divArray.push(randomBox);
+    defaultSize += 10;
   }
   boxesEl.append(...divArray);
   }
